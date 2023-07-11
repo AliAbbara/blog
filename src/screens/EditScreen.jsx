@@ -2,13 +2,13 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import { Context } from '../context/BlogContext'
 import { useState, useContext, useEffect } from 'react'
 
-export default function EditScreen({ navigation }) {
+export default function EditScreen({ navigation, route }) {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [message, setMessage] = useState('')
 
   const { state, editBlogPost } = useContext(Context)
-  const blogPost = state.find((blog) => blog.id === navigation.getParam('id'))
+  const blogPost = state.find((blog) => blog.id === route.params.id)
 
   useEffect(() => {
     setTitle(blogPost.title)

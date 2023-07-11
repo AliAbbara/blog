@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Button, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity } from 'react-native'
 import { Context } from '../context/BlogContext'
 import { useContext } from 'react'
 import { Feather } from '@expo/vector-icons'
@@ -28,16 +28,4 @@ export default function IndexScreen({ navigation }) {
       />
     </View>
   )
-}
-
-IndexScreen.navigationOptions = ({ navigation }) => {
-  return {
-    headerRight: () => (
-      <TouchableOpacity
-        className='mr-1'
-        onPress={() => navigation.navigate('Create')}>
-        <Feather name='plus' size={30} />
-      </TouchableOpacity>
-    ),
-  }
 }
